@@ -12,40 +12,38 @@ const { hotReloadHost, hotReloadPort } = require('./config');
 config.output.publicPath = '/';
 
 // 添加 scss less css处理
-config.module.rules.push(
-    {
-        test: /\.css$/,
-        use: [
-            'style-loader',
-            {
-                loader: 'css-loader'
-                // options: { sourceMap: true }
-            }
-        ]
-    }, {
-        test: /\.scss$/,
-        use: [
-            'style-loader',
-            {
-                loader: 'css-loader'
-                // options: { sourceMap: true }
-            },
-            'sass-loader'
-        ],
-        exclude: /node_modules/
-    }, {
-        test: /\.less$/,
-        use: [
-            'style-loader',
-            {
-                loader: 'css-loader'
-                // options: { sourceMap: true }
-            },
-            'less-loader'
-        ],
-        exclude: /node_modules/
-    }
-);
+config.module.rules.push({
+    test: /\.css$/,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader'
+            // options: { sourceMap: true }
+        }
+    ]
+}, {
+    test: /\.scss$/,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader'
+            // options: { sourceMap: true }
+        },
+        'sass-loader'
+    ],
+    exclude: /node_modules/
+}, {
+    test: /\.less$/,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader'
+            // options: { sourceMap: true }
+        },
+        'less-loader'
+    ],
+    exclude: /node_modules/
+});
 
 // 定义 运行环境变量
 config.plugins.unshift(new webpack.DefinePlugin({

@@ -5,6 +5,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageConfig = require('./package.json');
+
 const SRC_PATH = path.resolve('./src');
 const FRONT_END_PATH = path.join(SRC_PATH, 'frontEnd');
 const BUILD_FRONT_END_PATH = path.resolve('./build/frontEnd');
